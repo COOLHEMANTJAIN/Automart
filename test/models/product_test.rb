@@ -12,11 +12,7 @@ assert product.errors[:image_url].any?
 end
 
 test "product price must be positive" do
-product = Product.new(title:
-"My Book Title",
-description: "yyy",
-image_url:
-"zzz.jpg")
+product = Product.new(title: "My Book Title",description: "yyy",image_url:"zzz.jpg")
 product.price = -1
 assert product.invalid?
 assert_equal "must be greater than or equal to 0.01",
@@ -30,13 +26,7 @@ assert product.valid?
 end
 
 def new_product(image_url)
-Product.new(title:
-"My Book Title",
-description: "yyy",
-price:
-1,
-image_url:
-image_url)
+Product.new(title:"My Book Title",description: "yyy",price:1,image_url:image_url)
 end
 test "image url" do
 	ok = %w{ fred.gif fred.jpg fred.png FRED.JPG FRED.Jpg
