@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery 
   private
-def current_cart
+def current_cart											# for sessions
 Cart.find(session[:cart_id])
 rescue ActiveRecord::RecordNotFound
 cart = Cart.create
